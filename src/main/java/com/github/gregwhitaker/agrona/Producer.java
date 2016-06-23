@@ -27,6 +27,9 @@ import rx.RxReactiveStreams;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Produces messages onto the ring buffer.
+ */
 public class Producer implements Runnable {
     private final RingBuffer buffer;
 

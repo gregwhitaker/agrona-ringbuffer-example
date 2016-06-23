@@ -24,11 +24,20 @@ import java.nio.ByteBuffer;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * Runs the Agrona OneToOneRingBuffer example.
+ */
 public class ExampleRunner {
 
     private static final OneToOneRingBuffer BUFFER = new OneToOneRingBuffer(new UnsafeBuffer(
             ((ByteBuffer)(ByteBuffer.allocate(32768 + RingBufferDescriptor.TRAILER_LENGTH)))));
 
+    /**
+     * Main entry-point for this example.  This starts the producer and consumer applications.
+     *
+     * @param args command line arguments
+     * @throws Exception
+     */
     public static void main(String... args) throws Exception {
         ExecutorService executor = Executors.newCachedThreadPool();
         executor.execute(new Producer(BUFFER));

@@ -35,6 +35,7 @@ public class Producer implements Runnable {
 
     /**
      * Initializes this instance of {@link Producer} that puts messages into the ring buffer.
+     *
      * @param buffer ring buffer
      */
     public Producer(RingBuffer buffer) {

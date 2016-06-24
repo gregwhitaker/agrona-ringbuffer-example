@@ -28,11 +28,15 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Produces messages onto the ring buffer.
+ * Puts messages into the ring buffer.
  */
 public class Producer implements Runnable {
     private final RingBuffer buffer;
 
+    /**
+     * Initializes this instance of {@link Producer} that puts messages into the ring buffer.
+     * @param buffer ring buffer
+     */
     public Producer(RingBuffer buffer) {
         this.buffer = buffer;
     }
